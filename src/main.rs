@@ -5,8 +5,7 @@ use rgrep;
 use rgrep::Config;
 
 fn main() {
-    let args: Vec<String> = env::args().collect();
-    let config = Config::new(&args).unwrap_or_else(|err| {
+    let config = Config::new(env::args()).unwrap_or_else(|err| {
         eprintln!("ERROR: {}", err);
         process::exit(1);
     });
